@@ -32,5 +32,4 @@ Note: Before running the producer or consumer, pull in the following dependencie
 2. go get gopkg.in/go-playground/validator.v9
 
 Some assumptions made:
-1. No fault protection is required (for the sake of simplicity and following what was requested)
-2. Only one message at a time is to be sent asynchronously
+1. Only one message at a time is to be sent asynchronously
