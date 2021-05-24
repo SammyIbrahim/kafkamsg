@@ -18,12 +18,19 @@ cd kafkamsg/producer
 go run main.go
 
 
-4. Use POSTMAN AND curl to send a request and receive response
+4. Use POSTMAN to send a request and receive response
 
-For Postman, a POST request with: http://localhost:3333/?msg="this" (will show a 202 status returned)
+Perform a POST request with http://localhost:3333 (will return a 202 status to POSTMAN when successful) and the following body format:
 
-OR
+{
+    "message": "this",
+    "timestamp": "2021-05-23T23:46:00.00-04:00"
+}
 
-in a terminal..
-curl "http://localhost:3333/?msg="this" (will show the message returned to the consumer's console)
+Note: Before running the producer or consumer, pull in the following dependencies from the cli while in the project root directory by typing the following:
+1. go get github.com/Shopify/sarama
+2. go get gopkg.in/go-playground/validator.v9
 
+Some assumptions made:
+1. No fault protection is required (for the sake of simplicity and following what was requested)
+2. Only one message at a time is to be sent asynchronously
