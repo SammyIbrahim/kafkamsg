@@ -12,6 +12,8 @@ func main() {
 	cfg.Producer.Return.Errors = true
 	cfg.Producer.Return.Successes = true
 
+	//cron := cron.Schedule(time.Minute)
+
 	//Configure a new Async Producer with given broker Addresses and configuration
 	asyncProducer, err := sarama.NewAsyncProducer([]string{"localhost:9092"}, cfg)
 	if err != nil {
